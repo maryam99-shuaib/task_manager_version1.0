@@ -9,10 +9,10 @@ function addtask(){
 function updateUI(){
     var task_contents="";
     for(let x = 0; x < task.length; x++){
-        var TaskBox = `<div>
-        <div>${task[x]}</div>
-        <div onclick="deleteTask()">icon</div>
-        </div>`
+        var TaskBox = `<div class = task_item>
+                        <div>${task[x]}</div>
+                        <div onclick="deleteTask(${x})"><img src="./assets/icons/trash-can.svg"></div>
+                    </div>`
         task_contents = task_contents + TaskBox;
     }
     console.log(task_contents);
@@ -23,6 +23,6 @@ function updateUI(){
 }
 updateUI();
 
-function deleteTask(){
-    console.log("deleteTask")
+function deleteTask(task_Id){
+    console.log(task_Id)
 }
