@@ -49,3 +49,40 @@ h3{
     /* width:30% ; */
     
 }
+.BlackCover{
+    position: fixed;
+    top:0%;
+    left:0%;
+    width:100vw;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.315);
+}
+#editTask{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50% , -50%) ;
+    background-color: pink;
+    padding:30px;
+
+}
+#editTask h4{
+    color: blueviolet;
+    margin-top: 0px;
+    text-align: center;
+}
+#editTask button{
+    display: block;
+    margin-left: 59px;
+    margin-top: 15px;
+    background-color: blue;
+    color: aliceblue;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+}
+.closeBorder{
+    position:absolute;
+    right:19px;
+    font-size: 30px;
+}
