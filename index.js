@@ -25,4 +25,18 @@ updateUI();
 
 function deleteTask(task_Id){
     console.log(task_Id)
+    // delete item
+    task.splice(task_Id, 1)
+    // updateUI
+    updateUI();
+}
+
+function StartEditTask(task_Id){
+    console.log(task_Id)
+
+}
+
+function SaveEditTask(task_Id){
+    console.log(task_Id)
+
 }
