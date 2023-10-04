@@ -1,4 +1,5 @@
 var task= new Array("brushing my teeth" , "washing my face" , "eating food", "eating food", "eating food", "eating food", "eating food",);
+var current_edit_TaskId = 0;
 console.log(task);
 function addtask(){
     var newTask= document.getElementById("addTask_box").value
@@ -6,12 +7,16 @@ function addtask(){
     console.log(task);
     updateUI();
 }
+
 function updateUI(){
     var task_contents="";
     for(let x = 0; x < task.length; x++){
-        var TaskBox = `<div class = task_item>
+        var TaskBox = `<div class="task_item">
                         <div>${task[x]}</div>
-                        <div onclick="deleteTask(${x})"><img src="./assets/icons/trash-can.svg"></div>
+                        <div class ="maryam" >
+                            <div onclick="StartEditTask(${x})"><img src="./assets/icons/pen-to-square.svg"></div>
+                            <div onclick="deleteTask(${x})"><img src="./assets/icons/trash-can.svg"></div>
+                        </div>
                     </div>`
         task_contents = task_contents + TaskBox;
     }
@@ -32,11 +37,23 @@ function deleteTask(task_Id){
 }
 
 function StartEditTask(task_Id){
-    console.log(task_Id)
-
+    console.log(task_Id);
+    current_edit_TaskId = task_Id
+    document.getElementById("BlackCover").style.display="block";
+    // openseditbox
 }
 
-function SaveEditTask(task_Id){
-    console.log(task_Id)
+function SaveEditTask(){
+    let editContent = document.getElementById("editTask_box").value;
+    task[current_edit_TaskId] = editContent;
+    console.log(current_edit_TaskId);
 
+
+    updateUI();
+    CloseEditTask();
+
+}
+function CloseEditTask(){
+    document.getElementById("BlackCover").style.display="none";
+    // closeseditbox
 }
